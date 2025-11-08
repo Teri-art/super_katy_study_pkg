@@ -1,5 +1,5 @@
 <launch>
-    <!-- Принимаем аргумент -->
+    
     <arg name="topic_name" default="new_topic"/>
     
     <node name="listener_cpp" pkg="roscpp_tutorials" type="listener" output="screen">
