@@ -8,5 +8,7 @@
     <arg name="model" value="waffle"/>
     <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
   </include>
+  
+  <include file="$(find super_robot_package)/launch/turtlebot3_tf.launch" />
   <include file="$(find super_robot_package)/launch/turtlebot3_slam.launch" />
 </launch>

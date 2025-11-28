@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Запуск Gazebo world -->
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
+    </include>
+
+    <!-- Запуск публикации информации о расположении частей робота (TF) -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+
+    <!-- Запуск Rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" />
+</launch>
