@@ -1,5 +1,12 @@
 <launch>
-    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch" />
-    <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch" />
-    <include file="$(find turtlebot3_navigation)/launch/move_base.launch" />
+  <arg name="gazebo_gui" default="false" doc="Enable/disable Gazebo GUI"/>
+  
+  <include file="$(find super_robot_package)/launch/turtlebot3_world.launch">
+    <arg name="x_pos" value="-2.0"/>
+    <arg name="y_pos" value="-0.5"/>
+    <arg name="z_pos" value="0.0"/>
+    <arg name="model" value="waffle"/>
+    <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+  </include>
+  <include file="$(find super_robot_package)/launch/turtlebot3_slam.launch" />
 </launch>

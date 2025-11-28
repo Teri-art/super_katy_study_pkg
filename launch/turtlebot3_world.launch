@@ -1,9 +1,9 @@
 <launch>
   <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
-  <arg name="x_pos" default="-2.0" doc="Initial X position of the robot"/>
-  <arg name="y_pos" default="-0.5" doc="Initial Y position of the robot"/>
-  <arg name="z_pos" default="0.0" doc="Initial Z position of the robot"/>
-  <arg name="gazebo_gui" default="false" doc="Enable/disable Gazebo GUI"/>
+  <arg name="x_pos" default="-2.0" doc="Initial X position of the robot in meters"/>
+  <arg name="y_pos" default="-0.5" doc="Initial Y position of the robot in meters"/>
+  <arg name="z_pos" default="0.0" doc="Initial Z position (height) of the robot in meters"/>
+  <arg name="gazebo_gui" default="true" doc="Enable/disable Gazebo GUI"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/>

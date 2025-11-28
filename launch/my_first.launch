@@ -1,0 +1,19 @@
+<launch>
+    
+    <arg name="topic_name" default="new_topic"/>
+    
+    <group ns="new_ns">
+       
+        <include file="$(find super_katy_studo_pkg)/launch/another_one.launch">
+            <arg name="topic_name" value="$(arg topic_name)"/>
+        </include>
+        
+        
+        <node name="listener" pkg="rospy_tutorials" type="listener.py" output="screen">
+            <remap from="chatter" to="$(arg topic_name)"/>
+        </node>
+        <node name="talker" pkg="rospy_tutorials" type="talker.py" output="screen">
+            <remap from="chatter" to="$(arg topic_name)"/>
+        </node>
+    </group>
+</launch>
