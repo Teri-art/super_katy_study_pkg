@@ -1,0 +1,28 @@
+TebLocalPlannerROS:
+
+  max_vel_x: 0.4
+  max_vel_x_backwards: 0.2
+  max_vel_theta: 0.3
+  acc_lim_x: 0.5
+  acc_lim_theta: 0.5
+  
+  xy_goal_tolerance: 0.1
+  yaw_goal_tolerance: 0.2
+  
+  dt_ref: 0.3
+  dt_hysteresis: 0.1
+  min_samples: 3
+  max_global_plan_lookahead_dist: 3.0
+  
+  inflation_dist: 0.3
+  costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSMCCH"
+  costmap_converter_spin_thread: true
+  costmap_converter_rate: 5.0
+  
+  no_inner_iterations: 5
+  no_outer_iterations: 4
+  penalty_epsilon: 0.1
+  weight_optimaltime: 1.0
+  weight_obstacle: 50.0
+  weight_kinematics_nh: 1000.0
+  weight_kinematics_forward_drive: 1.0
